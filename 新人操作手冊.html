@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U-Wedding 新人操作手冊</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #c9a96e;
+  --gold-lt: #e8d4a8;
+  --gold-dk: #8b6a3e;
+  --brown: #2c1e0f;
+  --brown-m: #5a3a22;
+  --brown-s: #9a8070;
+  --bg: #fdf8f2;
+  --white: #ffffff;
+  --border: #f0e6d8;
+  --shadow: 0 4px 24px rgba(44,30,15,0.09);
+  --green: #2a3a2e;
+  --red: #c04040;
+  --blue: #3a5a8a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--brown); line-height: 1.8; }
+
+/* ── Cover ── */
+.cover {
+  background: linear-gradient(160deg,#3a2c1e,#5c4535,#7a5c42);
+  padding: 70px 32px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 25% 25%, rgba(201,169,110,0.20) 0%, transparent 55%),
+              radial-gradient(ellipse at 75% 75%, rgba(201,169,110,0.12) 0%, transparent 55%);
+}
+.cover-eyebrow { font-family:'Noto Sans TC',sans-serif; font-size:10px; letter-spacing:5px; color:rgba(201,169,110,0.65); margin-bottom:18px; }
+.cover-title { font-family:'Playfair Display',serif; font-size:36px; color:#f5e6cc; letter-spacing:2px; margin-bottom:10px; }
+.cover-sub { font-family:'Noto Sans TC',sans-serif; font-size:12px; color:rgba(220,190,140,0.6); letter-spacing:3px; margin-bottom:28px; }
+.cover-pills { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.cover-pill { display:inline-block; background:rgba(201,169,110,0.18); border:1px solid rgba(201,169,110,0.4); color:var(--gold-lt); font-size:11px; letter-spacing:1px; padding:6px 18px; border-radius:100px; font-family:'Noto Sans TC',sans-serif; }
+
+/* ── TOC ── */
+.toc { background:#1a120a; padding:32px 32px; }
+.toc-label { font-size:10px; letter-spacing:4px; color:var(--gold); margin-bottom:18px; font-family:'Noto Sans TC',sans-serif; }
+.toc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px 20px; }
+.toc-item { display:flex; align-items:center; gap:8px; font-size:12px; color:rgba(200,170,110,0.7); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-family:'Noto Sans TC',sans-serif; }
+.toc-n { color:var(--gold); font-size:10px; min-width:22px; }
+
+/* ── Container ── */
+.wrap { max-width:860px; margin:0 auto; padding:48px 20px 80px; }
+
+/* ── Section header ── */
+.sh { display:flex; align-items:center; gap:14px; margin-bottom:26px; padding-bottom:12px; border-bottom:2px solid var(--gold); }
+.sh-n { width:36px; height:36px; background:var(--gold); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0; font-family:'Playfair Display',serif; }
+.sh-t { font-family:'Playfair Display',serif; font-size:22px; color:var(--brown-m); letter-spacing:1px; }
+.sh-s { font-family:'Noto Sans TC',sans-serif; font-size:11px; color:var(--brown-s); margin-left:auto; }
+
+/* ── Card ── */
+.card { background:#fff; border-radius:16px; padding:22px 26px; margin-bottom:14px; box-shadow:var(--shadow); border:1px solid var(--border); }
+
+/* ── Step icon ── */
+.si { width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.si.gold { background:linear-gradient(135deg,#f5e6cc,#e8d4a8); }
+.si.green { background:linear-gradient(135deg,#e0f0e8,#c0dbc8); }
+.si.blue { background:linear-gradient(135deg,#e0e8f8,#c0ccec); }
+.si.red { background:linear-gradient(135deg,#f8e8e8,#ecccc0); }
+.si.purple { background:linear-gradient(135deg,#ece8f8,#d0c8ec); }
+.step-info h3 { font-size:15px; color:var(--brown-m); margin-bottom:3px; font-weight:600; }
+.step-info p { font-size:12px; color:var(--brown-s); font-family:'Noto Sans TC',sans-serif; }
+
+/* ── Info box ── */
+.ib { border-radius:11px; padding:13px 16px; margin:12px 0; display:flex; gap:10px; align-items:flex-start; font-family:'Noto Sans TC',sans-serif; font-size:12.5px; line-height:1.8; }
+.ib.tip  { background:#f0f8f4; border-left:3px solid #5e8a6e; color:#2a4a32; }
+.ib.warn { background:#fdf4f0; border-left:3px solid #c06040; color:#5a2010; }
+.ib.note { background:#f0f4fc; border-left:3px solid #4a6aaa; color:#1a2a50; }
+.ib i { font-size:15px; flex-shrink:0; margin-top:1px; }
+
+/* ── Body text ── */
+.bt { font-size:13px; font-family:'Noto Sans TC',sans-serif; line-height:2; color:var(--brown); }
+
+/* ── Highlight ── */
+.hl { background:#fdf0d8; border-radius:4px; padding:1px 5px; color:var(--gold-dk); font-weight:600; }
+.code { background:#1a120a; border-radius:8px; padding:11px 16px; font-family:monospace; font-size:13px; color:var(--gold); letter-spacing:.5px; margin:10px 0; word-break:break-all; }
+
+/* ── Steps numbered list ── */
+.sl { counter-reset:s; list-style:none; }
+.sl li { counter-increment:s; display:flex; gap:12px; margin-bottom:14px; font-family:'Noto Sans TC',sans-serif; font-size:13px; line-height:1.9; align-items:flex-start; }
+.sl li::before { content:counter(s); width:22px; height:22px; background:var(--gold); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0; margin-top:2px; }
+
+/* ── Screen mockup ── */
+.mock { background:linear-gradient(160deg,#3a2c1e,#5c4535,#7a5c42); border-radius:20px; padding:26px 22px; margin:14px 0; color:#fff; font-family:'Noto Serif TC',serif; box-shadow:0 8px 32px rgba(60,40,15,0.3); position:relative; overflow:hidden; }
+.mock::before { content:''; position:absolute; top:0; right:0; width:180px; height:180px; background:radial-gradient(circle,rgba(201,169,110,0.18) 0%,transparent 70%); }
+.mock-ey { font-size:9px; letter-spacing:4px; color:rgba(201,169,110,0.6); margin-bottom:6px; font-family:'Noto Sans TC',sans-serif; }
+.mock-t { font-size:20px; color:#f0e8d8; letter-spacing:3px; font-weight:normal; margin-bottom:14px; }
+.mock-field { background:rgba(255,255,255,0.1); border:1px solid rgba(201,169,110,0.25); border-radius:11px; padding:11px 15px; margin-bottom:8px; }
+.mock-fl { font-size:10px; letter-spacing:2px; color:rgba(201,169,110,0.65); margin-bottom:4px; font-family:'Noto Sans TC',sans-serif; }
+.mock-fv { font-size:13px; color:rgba(240,232,216,0.75); font-family:'Noto Sans TC',sans-serif; }
+.mock-btn { border-radius:11px; padding:11px; text-align:center; font-size:13px; letter-spacing:2px; font-family:'Noto Sans TC',sans-serif; margin-top:6px; }
+.mock-btn.solid { background:linear-gradient(135deg,#8b6a3e,#c9a96e); color:#fff; }
+.mock-btn.ghost { background:transparent; border:1px solid rgba(201,169,110,0.4); color:rgba(201,169,110,0.8); }
+
+/* ── Tab strip mock ── */
+.tabs { background:#f8f4f0; border-radius:12px; overflow-x:auto; display:flex; gap:2px; padding:4px; margin:12px 0; }
+.tab { padding:7px 12px; border-radius:9px; font-family:'Noto Sans TC',sans-serif; font-size:11px; color:var(--brown-s); white-space:nowrap; }
+.tab.on { background:#fff; color:var(--brown-m); font-weight:700; box-shadow:0 1px 6px rgba(44,30,15,0.1); }
+
+/* ── Worksheet grid ── */
+.ws-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin:14px 0; }
+.ws-card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:16px 18px; box-shadow:0 2px 8px rgba(44,30,15,0.05); }
+.ws-icon { font-size:22px; margin-bottom:8px; }
+.ws-name { font-size:13px; font-weight:700; color:var(--brown-m); margin-bottom:4px; font-family:'Noto Sans TC',sans-serif; }
+.ws-desc { font-size:11px; color:var(--brown-s); font-family:'Noto Sans TC',sans-serif; line-height:1.65; }
+.ws-tag { display:inline-block; font-size:10px; background:#f0e8d8; color:var(--gold-dk); border-radius:6px; padding:2px 8px; margin-top:6px; }
+
+/* ── Header fields mockup ── */
+.hf-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:10px 0; }
+.hf { background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px 14px; }
+.hf-label { font-size:10px; color:var(--brown-s); font-family:'Noto Sans TC',sans-serif; margin-bottom:4px; }
+.hf-val { font-size:12px; color:var(--brown); font-family:'Noto Sans TC',sans-serif; font-weight:600; }
+.hf-placeholder { font-size:11px; color:#c0b0a0; font-family:'Noto Sans TC',sans-serif; }
+
+/* ── Trouble ── */
+.trouble { background:#fff; border-radius:14px; border:1px solid var(--border); margin-bottom:12px; overflow:hidden; box-shadow:0 2px 6px rgba(44,30,15,0.04); }
+.trouble-q { padding:14px 18px; background:#fdf4f0; border-bottom:1px solid #f0e0d8; font-size:13px; font-weight:700; color:#5a2010; font-family:'Noto Sans TC',sans-serif; display:flex; gap:10px; }
+.trouble-a { padding:14px 18px; font-size:13px; font-family:'Noto Sans TC',sans-serif; line-height:2; }
+.sol { display:flex; gap:8px; margin-bottom:8px; align-items:flex-start; }
+.sol-n { background:#5e8a6e; color:#fff; width:18px; height:18px; border-radius:50%; font-size:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+
+/* ── Progress bar ── */
+.prog-mock { background:rgba(255,255,255,0.15); border-radius:4px; height:8px; margin-top:10px; overflow:hidden; }
+.prog-fill { height:100%; background:linear-gradient(90deg,#c9a96e,#f0d9a8); border-radius:4px; }
+
+/* ── Status dots ── */
+.status { display:inline-flex; align-items:center; gap:5px; font-size:11px; font-family:'Noto Sans TC',sans-serif; padding:3px 10px; border-radius:100px; font-weight:700; }
+.s-todo  { background:#f0ecf4; color:#9a8fa0; }
+.s-doing { background:#e8f0fa; color:#5e7ea8; }
+.s-done  { background:#e4f4ea; color:#5e8a6e; }
+
+/* ── Table ── */
+.ref-table { width:100%; border-collapse:collapse; font-family:'Noto Sans TC',sans-serif; font-size:12px; }
+.ref-table th { background:var(--brown); color:var(--gold-lt); padding:9px 12px; text-align:left; letter-spacing:1px; }
+.ref-table td { padding:9px 12px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.7; }
+.ref-table tr:nth-child(even) td { background:#fdf8f4; }
+.ref-table tr:last-child td { border-bottom:none; }
+
+/* ── Divider ── */
+.div { display:flex; align-items:center; gap:12px; margin:28px 0 20px; }
+.div-line { flex:1; height:1px; background:var(--border); }
+.div-text { font-size:10px; color:var(--gold); letter-spacing:3px; font-family:'Noto Sans TC',sans-serif; }
+
+/* ── Section wrapper ── */
+.section { margin-bottom:52px; }
+
+/* ── Kanban column mock ── */
+.kb { background:#fff; border-radius:14px; padding:14px 16px; border:1px solid var(--border); box-shadow:0 2px 8px rgba(44,30,15,0.05); }
+.kb-top { display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+.kb-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+.kb-label { font-size:13px; font-weight:700; color:var(--brown-m); font-family:'Noto Sans TC',sans-serif; }
+.kb-count { font-size:11px; color:var(--brown-s); margin-left:auto; font-family:'Noto Sans TC',sans-serif; }
+.kb-card { background:var(--bg); border-radius:10px; padding:10px 12px; margin-bottom:8px; border:1px solid #f0e8e0; }
+.kb-tag { font-size:10px; color:var(--gold-dk); background:#fdf0d8; border-radius:6px; padding:2px 8px; margin-bottom:5px; display:inline-block; }
+.kb-text { font-size:12px; color:var(--brown); line-height:1.5; font-family:'Noto Sans TC',sans-serif; }
+
+/* ── Budget row mock ── */
+.bud-row { background:#fff; border-radius:11px; padding:13px 16px; margin-bottom:8px; border:1px solid var(--border); }
+.bud-cat { font-size:13px; font-weight:700; color:var(--brown-m); font-family:'Noto Sans TC',sans-serif; margin-bottom:8px; }
+.bud-nums { display:flex; gap:16px; align-items:center; }
+.bud-n { font-size:12px; color:var(--brown-s); font-family:'Noto Sans TC',sans-serif; }
+.bud-v { font-size:14px; font-weight:700; color:var(--brown); }
+
+/* Footer */
+.footer { background:var(--brown); color:rgba(200,170,110,0.45); text-align:center; padding:24px; font-size:11px; letter-spacing:2px; font-family:'Noto Sans TC',sans-serif; }
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <div class="cover-eyebrow">U-Wedding · New Couple Manual</div>
+  <div class="cover-title">新人操作手冊</div>
+  <div class="cover-sub">登入 · Header · 工作表完整說明</div>
+  <div class="cover-pills">
+    <span class="cover-pill">💑 新人版</span>
+    <span class="cover-pill">📱 手機友善</span>
+    <span class="cover-pill">☁️ 雲端同步</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-label">目錄 / Contents</div>
+  <div class="toc-grid">
+    <div class="toc-item"><span class="toc-n">01</span>登入流程</div>
+    <div class="toc-item"><span class="toc-n">02</span>帳號設定</div>
+    <div class="toc-item"><span class="toc-n">03</span>Header 婚禮資訊設定</div>
+    <div class="toc-item"><span class="toc-n">04</span>頁籤排序與改名</div>
+    <div class="toc-item"><span class="toc-n">05</span>⏱ 倒數頁</div>
+    <div class="toc-item"><span class="toc-n">06</span>📋 看板</div>
+    <div class="toc-item"><span class="toc-n">07</span>💰 預算</div>
+    <div class="toc-item"><span class="toc-n">08</span>📆 行事曆</div>
+    <div class="toc-item"><span class="toc-n">09</span>⭐ 廠商</div>
+    <div class="toc-item"><span class="toc-n">10</span>📁 合約</div>
+    <div class="toc-item"><span class="toc-n">11</span>🎒 當日物品</div>
+    <div class="toc-item"><span class="toc-n">12</span>🪑 座位安排</div>
+    <div class="toc-item"><span class="toc-n">13</span>其他頁籤一覽</div>
+    <div class="toc-item"><span class="toc-n">14</span>常見問題排查</div>
+    <div class="toc-item"><span class="toc-n">15</span>快速參考卡</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ══ 01 登入 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">1</div><div class="sh-t">登入流程</div><div class="sh-s">第一步</div></div>
+
+  <div class="card">
+    <div class="step-row">
+      <div class="si gold">🔗</div>
+      <div class="step-info"><h3>Step 1 — 進入你的專屬網址</h3><p>婚顧提供一個專屬網址，每次從此進入</p></div>
+    </div>
+    <div class="bt">
+      <p>每對新人對應一組獨立網址，格式如下：</p>
+      <div class="code">https://[網站網域]/?tenant=app01</div>
+      <p>把此網址加入瀏覽器書籤，或存在手機桌面以方便每次開啟。</p>
+    </div>
+    <div class="ib tip"><i>💡</i><div>手機使用者：用 Chrome 或 Safari 開啟網址後，點「加到主畫面」，下次就能像 App 一樣直接點開。</div></div>
+  </div>
+
+  <div class="card">
+    <div class="step-row">
+      <div class="si gold">🔑</div>
+      <div class="step-info"><h3>Step 2 — 選擇登入方式</h3><p>系統提供兩種進入方式</p></div>
+    </div>
+    <div class="bt">
+      <p>開啟網址後，會看到登入畫面。你有兩種登入方式：</p><br>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;">
+        <div style="background:#fdf8f2;border-radius:12px;padding:14px;border:1px solid #f0e6d8;text-align:center;">
+          <div style="font-size:20px;margin-bottom:8px;">🔑</div>
+          <div style="font-size:13px;font-weight:700;color:#5a3a22;margin-bottom:4px;">授權碼啟用</div>
+          <div style="font-size:11px;color:#9a8070;font-family:'Noto Sans TC',sans-serif;">首次使用，輸入婚顧給的授權碼（DR-DR-XXXXXX），設定帳號密碼</div>
+        </div>
+        <div style="background:#f8fef9;border-radius:12px;padding:14px;border:1px solid #c0dbc8;text-align:center;">
+          <div style="font-size:20px;margin-bottom:8px;">👤</div>
+          <div style="font-size:13px;font-weight:700;color:#2a4a32;margin-bottom:4px;">帳號密碼登入</div>
+          <div style="font-size:11px;color:#5e8a6e;font-family:'Noto Sans TC',sans-serif;">設定後每次使用，輸入你自己設定的帳號和密碼</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mock">
+      <div class="mock-ey">U-WEDDING · 雲端婚禮顧問</div>
+      <div class="mock-t">雲端婚禮顧問</div>
+      <div class="mock-field"><div class="mock-fl">帳 號</div><div class="mock-fv">your_account</div></div>
+      <div class="mock-field"><div class="mock-fl">密 碼</div><div class="mock-fv">••••••••</div></div>
+      <div class="mock-btn solid">✦ 登　入</div>
+      <div class="mock-btn ghost" style="margin-top:8px;">🔑 首次使用？輸入授權碼啟用</div>
+      <div class="mock-btn ghost" style="margin-top:4px;font-size:11px;">忘記密碼？</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="step-row">
+      <div class="si green">✨</div>
+      <div class="step-info"><h3>首次使用：授權碼啟用流程</h3><p>僅第一次需要，之後直接帳號密碼登入</p></div>
+    </div>
+    <ol class="sl">
+      <li>點擊「🔑 首次使用？輸入授權碼啟用」。</li>
+      <li>輸入婚顧提供的<span class="hl">新人授權碼</span>（格式：<code style="font-family:monospace;background:#fdf0d8;padding:1px 5px;border-radius:4px;">DR-DR-XXXXXX</code>）。</li>
+      <li>點擊確認驗證，系統驗證通過後進入帳號設定頁面。</li>
+      <li>設定<strong>帳號名稱</strong>（4字元以上，之後用此名稱登入）。</li>
+      <li>設定<strong>密碼</strong>（6字元以上）並確認密碼。</li>
+      <li>點擊「完成設定」，即可進入婚禮管家主畫面。</li>
+    </ol>
+    <div class="ib warn"><i>⚠️</i><div>授權碼格式為 <code>DR-DR-</code> 開頭（不是 <code>DR-CON-</code>，那是婚顧專用）。輸入錯誤格式的碼會顯示無效。</div></div>
+  </div>
+</div>
+
+<!-- ══ 02 帳號設定 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">2</div><div class="sh-t">帳號與密碼設定</div><div class="sh-s">重要，婚顧需要你的帳密</div></div>
+  <div class="card">
+    <div class="bt">
+      <p>帳號設定有兩個重要用途：</p><br>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="hf"><div class="hf-label">用途 ①</div><div class="hf-val">讓婚顧把你加入後台管理，才能在婚顧後台看到你的進度</div></div>
+        <div class="hf"><div class="hf-label">用途 ②</div><div class="hf-val">日後使用帳號密碼快速登入，不需每次找授權碼</div></div>
+      </div>
+      <br>
+      <p>設定完成後，把帳號和密碼告訴你的婚禮顧問，讓他將你加入管理後台。</p>
+    </div>
+    <div class="ib tip"><i>💡</i><div>帳號名稱建議用好記的中英文，例如姓名縮寫或暱稱。密碼可用手機號後6碼或你習慣的密碼，但不要用太簡單的如「123456」。</div></div>
+    <div class="ib note"><i>ℹ️</i><div>若忘記密碼，可在登入頁面點「忘記密碼」，輸入授權碼與帳號後重設。或聯絡婚顧請管理員協助重設。</div></div>
+  </div>
+</div>
+
+<!-- ══ 03 Header ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">3</div><div class="sh-t">Header 婚禮資訊設定</div><div class="sh-s">登入後第一件事</div></div>
+
+  <div class="card">
+    <div class="bt">
+      <p>進入系統後，最上方的 Header 區域有所有婚禮基本資訊欄位。<strong>這些資料會自動儲存</strong>，也會顯示在婚顧的後台摘要中。</p><br>
+      <p>Header 共有兩排欄位，可以左右滑動查看（手機上底部提示「請往右滑動 →」）：</p>
+    </div>
+    <div style="margin:16px 0;">
+      <div style="font-size:11px;font-family:'Noto Sans TC',sans-serif;color:var(--brown-s);margin-bottom:6px;letter-spacing:1px;">第一排</div>
+      <div class="hf-row">
+        <div class="hf"><div class="hf-label">📅 婚禮日期</div><div class="hf-val">2025-10-18</div></div>
+        <div class="hf"><div class="hf-label">💑 新人名字</div><div class="hf-placeholder">如：志明 & 春嬌</div></div>
+        <div class="hf"><div class="hf-label">🎨 婚禮主題風格</div><div class="hf-placeholder">如：法式復古</div></div>
+      </div>
+      <div style="font-size:11px;font-family:'Noto Sans TC',sans-serif;color:var(--brown-s);margin:10px 0 6px;letter-spacing:1px;">第二排（滑動查看）</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="hf"><div class="hf-label">💍 儀式項目</div><div class="hf-placeholder">文定 / 迎娶 / 證婚…</div></div>
+        <div class="hf"><div class="hf-label">📍 儀式地點</div><div class="hf-placeholder">如：台北晶華酒店</div></div>
+        <div class="hf"><div class="hf-label">🥂 宴客類別</div><div class="hf-placeholder">午宴 / 晚宴…</div></div>
+        <div class="hf"><div class="hf-label">🏛️ 宴客地點</div><div class="hf-placeholder">如：文華東方酒店</div></div>
+      </div>
+    </div>
+    <div class="ib tip"><i>💡</i><div>婚禮日期填完後，倒數頁會自動開始計算距今天數。名字欄位會顯示在 Header 標題下方，讓婚禮管家更有個人感。</div></div>
+    <div class="ib note"><i>ℹ️</i><div>所有欄位<strong>直接點擊即可輸入</strong>，輸入後系統會在 1 秒內自動儲存至雲端，不需另外按儲存按鈕。</div></div>
+  </div>
+
+  <div class="card">
+    <div class="step-row"><div class="si blue">📊</div><div class="step-info"><h3>整體進度條</h3><p>Header 下方的進度資訊</p></div></div>
+    <div class="bt">
+      <p>Header 底部會自動計算並顯示：</p><br>
+      <div style="background:linear-gradient(160deg,#3a2c1e,#5c4535);border-radius:12px;padding:16px;color:#fff;font-family:'Noto Sans TC',sans-serif;font-size:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+          <span>整體籌備進度</span>
+          <span style="color:var(--gold);">38%</span>
+        </div>
+        <div class="prog-mock"><div class="prog-fill" style="width:38%;"></div></div>
+        <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
+          <span>✓ 12 完成</span><span>◐ 8 進行中</span><span>○ 24 未開始</span><span>👥 80 人</span>
+        </div>
+      </div>
+      <p style="margin-top:10px;">這個數字完全根據你在看板中更新的卡片狀態自動計算，不需手動填寫。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 04 頁籤 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">4</div><div class="sh-t">頁籤排序與自訂改名</div><div class="sh-s">把最常用的移到前面</div></div>
+  <div class="card">
+    <div class="bt">
+      <p>Header 下方是頁籤列，預設顯示的頁籤為：</p>
+      <div class="tabs" style="margin:12px 0;">
+        <div class="tab on">⏱ 倒數</div>
+        <div class="tab">📋 看板</div>
+        <div class="tab">📆 行事曆</div>
+        <div class="tab">💰 預算</div>
+        <div class="tab">⭐ 廠商</div>
+        <div class="tab">📁 合約</div>
+        <div class="tab">📂 文件</div>
+        <div class="tab">🧰 工具箱</div>
+        <div class="tab">📅 流程</div>
+        <div class="tab">👁 顧問視角</div>
+      </div>
+      <p>頁籤列右側有一個 <span class="hl">✎ 按鈕</span>，點擊後進入「編輯模式」：</p>
+    </div>
+    <ol class="sl" style="margin-top:12px;">
+      <li><strong>拖曳排序</strong>：按住頁籤左方的 <span class="hl">⠿⠿</span> 符號，拖曳到想要的位置。</li>
+      <li><strong>改名</strong>：在編輯模式下，雙擊任一頁籤，可以直接改成你想要的名稱，按 Enter 確認。</li>
+      <li>完成後點擊右方的 <span class="hl">✓ 按鈕</span>退出編輯模式。</li>
+    </ol>
+    <div class="ib tip"><i>💡</i><div>建議把最常看的頁籤（通常是「看板」和「預算」）拖到最前面，節省每次切換的時間。</div></div>
+  </div>
+</div>
+
+<!-- ══ 05 倒數 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">5</div><div class="sh-t">⏱ 倒數頁</div><div class="sh-s">婚禮進度一覽</div></div>
+  <div class="card">
+    <div class="bt">
+      <p>倒數頁是進入系統後的第一個畫面，有兩個主要功能：</p><br>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;">
+        <div class="ws-card">
+          <div class="ws-icon">⏱</div>
+          <div class="ws-name">婚禮倒數計時</div>
+          <div class="ws-desc">即時顯示距離婚禮日期的天、時、分、秒，根據 Header 填寫的日期自動計算</div>
+        </div>
+        <div class="ws-card">
+          <div class="ws-icon">📊</div>
+          <div class="ws-name">各時期進度</div>
+          <div class="ws-desc">以彩色進度條顯示「婚前12個月」到「婚後」各階段完成率，點擊可跳到看板</div>
+        </div>
+      </div>
+      <p>這一頁是「唯讀」的，不需要手動輸入，所有資料都從看板和 Header 自動計算。</p>
+    </div>
+    <div class="ib note"><i>ℹ️</i><div>若倒數顯示 0 天，請確認 Header 的「婚禮日期」欄位是否已正確填寫，且日期是否在未來。</div></div>
+  </div>
+</div>
+
+<!-- ══ 06 看板 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">6</div><div class="sh-t">📋 看板</div><div class="sh-s">婚禮籌備核心工具</div></div>
+
+  <div class="card">
+    <div class="bt">
+      <p>看板是整個系統最重要的功能，把所有備婚任務分成多個時期（欄位），每個任務就是一張「卡片」。</p><br>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0;">
+        <div class="kb">
+          <div class="kb-top"><div class="kb-dot" style="background:#a07050;"></div><div class="kb-label">婚前 12 個月</div><div class="kb-count">3/8</div></div>
+          <div class="kb-card"><div class="kb-tag">健康</div><div class="kb-text">婚前健康檢查</div></div>
+          <div class="kb-card"><div class="kb-tag">場地</div><div class="kb-text">預約場地參觀</div></div>
+        </div>
+        <div class="kb">
+          <div class="kb-top"><div class="kb-dot" style="background:#4a8a60;"></div><div class="kb-label">婚前 9 個月</div><div class="kb-count">5/10</div></div>
+          <div class="kb-card"><div class="kb-tag">婚紗</div><div class="kb-text">挑選婚紗工作室</div></div>
+          <div class="kb-card"><div class="kb-tag">攝影</div><div class="kb-text">洽談婚禮攝影師</div></div>
+        </div>
+        <div class="kb">
+          <div class="kb-top"><div class="kb-dot" style="background:#5a70a0;"></div><div class="kb-label">婚前 6 個月</div><div class="kb-count">1/12</div></div>
+          <div class="kb-card"><div class="kb-tag">流程</div><div class="kb-text">確認婚禮主持人</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="step-row"><div class="si gold">🔄</div><div class="step-info"><h3>更新卡片狀態</h3><p>每完成一件事就更新</p></div></div>
+    <div class="bt">
+      <p>每張卡片有三個狀態，點擊卡片左方的狀態圓點可以切換：</p><br>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:8px 0;">
+        <span class="status s-todo">⚪ 未開始</span>
+        <span style="font-size:18px;color:#ccc;align-self:center;">→</span>
+        <span class="status s-doing">◐ 進行中</span>
+        <span style="font-size:18px;color:#ccc;align-self:center;">→</span>
+        <span class="status s-done">✓ 已完成</span>
+      </div>
+      <br>
+      <p>切換到「<strong>進行中</strong>」時，系統可能會自動彈出一個「專業小提醒」，提供這個任務的重要注意事項，建議仔細閱讀。</p>
+    </div>
+    <div class="ib tip"><i>💡</i><div>右上角 🔔 按鈕會顯示即將到期的時期提醒。若某個時期設定了截止日期且還有未完成的卡片，系統會自動彈出警示。</div></div>
+  </div>
+
+  <div class="card">
+    <div class="step-row"><div class="si green">📝</div><div class="step-info"><h3>展開卡片：加備註、設截止日、移動</h3><p>點擊卡片主體可以展開</p></div></div>
+    <ol class="sl">
+      <li>點擊任一卡片的主文字區域，卡片會展開顯示更多選項。</li>
+      <li>可以在文字框輸入<strong>備註</strong>（例如廠商電話、約定細節）。</li>
+      <li>每個欄位（時期）可以點上方的日曆圖示設定<strong>截止日期</strong>，設定後接近到期時會有提醒。</li>
+      <li>點「移動」按鈕可以把卡片搬移到其他欄位。</li>
+      <li>也可以直接<strong>拖曳</strong>卡片到其他位置或欄位（手機支援長按拖曳）。</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="step-row"><div class="si blue">➕</div><div class="step-info"><h3>新增自訂卡片</h3><p>系統沒有的任務自己加</p></div></div>
+    <ol class="sl">
+      <li>在任一欄位底部點擊「＋ 新增卡片」。</li>
+      <li>輸入任務名稱，選擇標籤類型（可空白）。</li>
+      <li>點擊「確認」，新卡片會出現在該欄位中。</li>
+    </ol>
+    <div class="ib note"><i>ℹ️</i><div>系統也支援 <strong>Ctrl+Z</strong>（Mac: Command+Z）撤銷操作，誤刪或誤改可以還原。若有垃圾桶圖示，可以找回最近刪除的卡片。</div></div>
+  </div>
+</div>
+
+<!-- ══ 07 預算 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">7</div><div class="sh-t">💰 預算</div><div class="sh-s">費用追蹤</div></div>
+
+  <div class="card">
+    <div class="bt">
+      <p>預算頁列出所有婚禮支出類別（共 24 項），你可以填入每項的「預算上限」和「實際花費」，系統自動計算差額。</p><br>
+      <div class="bud-row">
+        <div class="bud-cat">🏨 婚宴場地</div>
+        <div class="bud-nums">
+          <div><div class="bud-n">實際花費</div><div class="bud-v" style="color:#5a3a22;">NT$330,000</div></div>
+          <div style="color:#ccc;font-size:18px;">/</div>
+          <div><div class="bud-n">預算上限</div><div class="bud-v" style="color:#8a7060;">NT$350,000</div></div>
+        </div>
+        <div class="prog-mock" style="background:#f0e8e0;margin-top:8px;"><div class="prog-fill" style="width:94%;"></div></div>
+        <div style="font-size:11px;color:#9a8070;font-family:'Noto Sans TC',sans-serif;margin-top:4px;">剩餘 NT$20,000 · 94%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="step-row"><div class="si gold">✏️</div><div class="step-info"><h3>如何填寫預算金額</h3><p>直接點擊即可編輯</p></div></div>
+    <ol class="sl">
+      <li>點擊任一項目的「實際花費」金額（有下劃線），直接輸入數字。</li>
+      <li>同樣方式點擊「預算上限」輸入預算金額。</li>
+      <li>按 Enter 或點其他地方確認，自動儲存。</li>
+      <li>類別名稱也可以點擊修改（自訂項目名稱）。</li>
+      <li>不需要的類別可以點右方的 ✕ 刪除，之後可以再新增。</li>
+    </ol>
+    <div class="ib tip"><i>💡</i><div>頂部「總預算」也可以點擊手動設定一個固定數字（手動設定模式），或點「↩ 恢復自動加總」改回各項目相加的模式。</div></div>
+    <div class="ib note"><i>ℹ️</i><div>右上角的「📄 一鍵匯出預算 PDF 報告」，可以把目前預算狀況匯出成 PDF 文件，方便與婚顧或雙方家長討論。</div></div>
+  </div>
+</div>
+
+<!-- ══ 08 行事曆 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">8</div><div class="sh-t">📆 行事曆</div><div class="sh-s">新人 & 婚顧共用 · v2.0</div></div>
+
+  <!-- 功能概覽 -->
+  <div class="card">
+    <div class="step-row"><div class="si gold">📅</div><div class="step-info"><h3>功能概覽</h3><p>行事曆是婚禮籌備的核心排程工具</p></div></div>
+    <div class="bt">
+      <p>行事曆頁面是新人和婚顧<strong>共同填寫、即時同步</strong>的排程工具，支援以下功能：</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0;">
+      <div class="ws-card">
+        <div class="ws-icon">📅</div>
+        <div class="ws-name">新增婚禮行程</div>
+        <div class="ws-desc">試穿、現勘、試菜、廠商會議等，分類管理一目了然</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">🎨</div>
+        <div class="ws-name">顏色標記</div>
+        <div class="ws-desc">為行程設定顏色分類，快速識別不同類型的行程</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">📝</div>
+        <div class="ws-name">時間與備註</div>
+        <div class="ws-desc">為每個行程添加時間、填寫者與備註說明</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">🔗</div>
+        <div class="ws-name">Google 行事曆同步</div>
+        <div class="ws-desc">綁定共用行事曆，讓婚顧與新人即時同步進度</div>
+      </div>
+    </div>
+    <div class="ib note"><i>★</i><div>行事曆以<strong>月曆視圖</strong>呈現，有行程的日期會顯示彩色標記；婚禮當天以<strong>金色底色</strong>特別標示。</div></div>
+  </div>
+
+  <!-- 開啟頁面 -->
+  <div class="card">
+    <div class="step-row"><div class="si green">🖥️</div><div class="step-info"><h3>Step 1 — 開啟行事曆頁面</h3><p>從系統頂端功能列進入</p></div></div>
+    <ol class="sl">
+      <li>用帳號密碼<strong>登入</strong>婚禮籌備管家主頁面。</li>
+      <li>在頁面上方找到<strong>功能列</strong>，往右滑動或尋找 <span class="hl">📆 行事曆</span>。</li>
+      <li>點擊「行事曆」後，即可看到完整月曆視圖。</li>
+    </ol>
+    <div class="ib note"><i>★</i><div>行事曆分頁在功能列靠右側，可能需要<strong>左右滑動</strong>才能看到。</div></div>
+  </div>
+
+  <!-- 新增行程 -->
+  <div class="card">
+    <div class="step-row"><div class="si green">➕</div><div class="step-info"><h3>Step 2 — 新增行程</h3><p>記錄所有與婚禮相關的重要日期</p></div></div>
+    <ol class="sl">
+      <li>在月曆上<strong>點擊任一日期</strong>，或點頁面底部的 <span class="hl">＋ 新增行程</span> 按鈕。</li>
+      <li>填入<strong>行程標題</strong>（必填，如：台北 A 飯店場勘）。</li>
+      <li>選擇<strong>行程類型</strong>，不同類型以不同顏色顯示，方便分類：
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;">
+          <span style="background:#e0e8f8;color:#3a5a9a;padding:3px 10px;border-radius:8px;font-size:11px;font-family:'Noto Sans TC',sans-serif;">🔵 廠商面談</span>
+          <span style="background:#e8f4e8;color:#3a7a3a;padding:3px 10px;border-radius:8px;font-size:11px;font-family:'Noto Sans TC',sans-serif;">🟢 場地勘查</span>
+          <span style="background:#fdf0d8;color:#8b6a3e;padding:3px 10px;border-radius:8px;font-size:11px;font-family:'Noto Sans TC',sans-serif;">🟡 試菜</span>
+          <span style="background:#f8e8f0;color:#9a3a6a;padding:3px 10px;border-radius:8px;font-size:11px;font-family:'Noto Sans TC',sans-serif;">🩷 彩妝試用</span>
+          <span style="background:#f0f0f0;color:#5a5a5a;padding:3px 10px;border-radius:8px;font-size:11px;font-family:'Noto Sans TC',sans-serif;">⚪ 其他</span>
+        </div>
+      </li>
+      <li>輸入<strong>時間</strong>（選填）、<strong>填寫者</strong>（如：新娘 / 新郎）、<strong>備註</strong>（地點、注意事項）。</li>
+      <li>點擊 <span class="hl">💾 儲存</span> 完成，行程立即出現在月曆上。</li>
+    </ol>
+    <div class="ib tip"><i>💡</i><div>建議在「填寫者」欄填入名稱，方便區分哪些行程是婚顧安排、哪些是自己新增的。</div></div>
+  </div>
+
+  <!-- Google 行事曆綁定 -->
+  <div class="card">
+    <div class="step-row"><div class="si blue">🔗</div><div class="step-info"><h3>Step 3 — 綁定 Google 共用行事曆</h3><p>設定一次，雙方永久同步（選用）</p></div></div>
+    <div class="bt" style="margin-bottom:14px;">
+      <p>設定共用行事曆後，婚顧與新人可以即時看到彼此新增的行程，方便協同規劃。</p>
+    </div>
+    <ol class="sl">
+      <li>
+        開啟 <a href="https://calendar.google.com/calendar/r/settings/createcalendar" target="_blank" style="color:#4a6090;font-weight:700;">Google 行事曆</a>，點擊左側「<strong>其他日曆 Other calendars</strong>」旁的「<strong>＋</strong>」→「<strong>建立新日曆 Create new calendar</strong>」。
+      </li>
+      <li>命名為「<strong>雲端婚禮顧問 共用行事曆</strong>」→ 點擊「<strong>建立日曆 Create calendar</strong>」。</li>
+      <li>在左側找到「雲端婚禮顧問 共用行事曆」→ 點進「<strong>設定 Settings and sharing</strong>」。</li>
+      <li>往下滑，找到「<strong>Shared with specific people</strong>」→ 加入<strong>另一半</strong>及<strong>婚禮顧問</strong>的 Gmail 信箱 → 點「<strong>Send</strong>」寄出邀請。</li>
+      <li>繼續往下滑，找到「<strong>Calendar ID</strong>」→ 複製下方完整網址。<br>
+        <div class="code" style="margin-top:8px;font-size:12px;">範例：xxxxxxxxxx@group.calendar.google.com</div>
+      </li>
+      <li>回到<strong>婚禮顧問行事曆頁面</strong>，展開「<strong>🔗 Google 共用行事曆設定</strong>」面板。</li>
+      <li>將複製的 Calendar ID 貼入輸入框 → 點擊「<strong>💾 儲存設定</strong>」。</li>
+      <li>點擊「<strong>立即同步</strong>」確認連線成功。</li>
+      <li>確認頁面同步狀態燈變為<span style="color:#5e8a6e;font-weight:700;">🟢 綠色</span>，代表已成功連結。</li>
+    </ol>
+
+    <div style="background:#fff8f0;border-radius:12px;padding:14px 16px;margin:12px 0;border:1px solid #f0d8b8;">
+      <div style="font-size:12px;font-weight:700;color:#5a3a22;margin-bottom:10px;font-family:'Noto Sans TC',sans-serif;">📋 重要說明</div>
+      <div style="font-size:12px;color:#5a3a22;font-family:'Noto Sans TC',sans-serif;line-height:2;">
+        ・設定完成後，每次<strong>新增、修改或刪除</strong>行程，系統都會自動推送最新 iCal 至雲端<br>
+        ・Google 行事曆通常在<strong>數分鐘內</strong>完成同步（最長可能需要 24 小時）<br>
+        ・已訂閱的行事曆<strong>無需手動操作</strong>，Google 會自動輪詢更新<br>
+        ・建議婚顧與新人都訂閱同一個共用行事曆，確保資訊同步
+      </div>
+    </div>
+
+    <div class="ib warn"><i>⚠️</i><div>Google 行事曆需設定為「公開」或與指定人員共用，才能讓系統正確推送 iCal。設定步驟中的「Shared with specific people」已包含此操作，請確實完成第 4 步。</div></div>
+    <div class="ib tip"><i>💡</i><div>綁定成功後，每個行程旁會出現 <span class="hl">📅</span> 按鈕，點擊可直接把該行程加入你的 Google 行事曆，方便在手機日曆 App 中查看。</div></div>
+  </div>
+
+  <!-- 常見問題 Q&A -->
+  <div class="card">
+    <div class="step-row"><div class="si purple">❓</div><div class="step-info"><h3>行事曆常見問題 Q&A</h3><p>來源：U-Wedding 行事曆教學手冊 v2.0</p></div></div>
+
+    <div class="trouble">
+      <div class="trouble-q">Q：新增行程後 Google 行事曆沒有立即更新？</div>
+      <div class="trouble-a">
+        <div class="sol"><span class="sol-n">A</span><span>這是正常現象。Google 行事曆有輪詢機制，通常<strong>數分鐘至 24 小時內</strong>會自動同步。若超過 24 小時仍未更新，請至行事曆頁面點擊「🔄 立即同步」重新推送。</span></div>
+      </div>
+    </div>
+
+    <div class="trouble">
+      <div class="trouble-q">Q：行程顏色有什麼實際意義？</div>
+      <div class="trouble-a">
+        <div class="sol"><span class="sol-n">A</span><span>顏色只作為<strong>視覺分類</strong>用途，方便快速識別行程類型，不影響任何功能。建議和婚顧訂定一套顏色規則並統一使用。</span></div>
+      </div>
+    </div>
+
+    <div class="trouble">
+      <div class="trouble-q">Q：婚顧和新人會看到相同的行程嗎？</div>
+      <div class="trouble-a">
+        <div class="sol"><span class="sol-n">A</span><span>是的。行事曆資料是共用的，婚顧和新人登入後看到的行程<strong>完全相同</strong>，任一方新增或修改後，另一方刷新即可看到。</span></div>
+      </div>
+    </div>
+
+    <div class="trouble">
+      <div class="trouble-q">Q：刪除行程後 Google 行事曆的行程會一起消失嗎？</div>
+      <div class="trouble-a">
+        <div class="sol"><span class="sol-n">A</span><span>會。系統刪除行程後，會自動推送更新的 iCal，Google 行事曆在下次同步時，會<strong>移除</strong>對應行程，無需手動操作。</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 09 廠商 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">9</div><div class="sh-t">⭐ 廠商</div><div class="sh-s">廠商資訊管理</div></div>
+  <div class="card">
+    <div class="bt">
+      <p>廠商頁面用來記錄所有合作廠商的聯絡資訊、合作狀態和備註。可記錄婚攝、婚紗、新秘、佈置、主持人等各類廠商。</p><br>
+      <p>每筆廠商資料可以記錄：名稱、類別、聯絡方式、報價、合作狀態（詢價中 / 確認 / 簽約）、評分和備註。</p>
+    </div>
+    <div class="ib tip"><i>💡</i><div>建議在每次廠商面談後當場或事後立即輸入報價和備註，方便日後比較多家廠商的條件。</div></div>
+  </div>
+</div>
+
+<!-- ══ 10 合約 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">10</div><div class="sh-t">📁 合約</div><div class="sh-s">合約管理追蹤</div></div>
+  <div class="card">
+    <div class="bt">
+      <p>合約頁面用來追蹤所有已簽或待簽的廠商合約。可記錄合約狀態、付款時程、尾款截止日等重要資訊，避免漏繳或遺漏合約細節。</p><br>
+      <p>每筆合約可記錄：廠商名稱、合約金額、訂金已付、尾款金額、尾款截止日、備份狀態（是否已拍照備份）。</p>
+    </div>
+    <div class="ib warn"><i>⚠️</i><div>重要：簽完合約後記得在此頁面標記「已簽約」並記錄尾款日期，系統可以幫你追蹤付款時程。</div></div>
+  </div>
+</div>
+
+<!-- ══ 11 當日物品 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">11</div><div class="sh-t">🎒 當日物品</div><div class="sh-s">婚禮當天物品清單</div></div>
+  <div class="card">
+    <div class="bt">
+      <p>此頁籤預設未顯示（需透過工具箱或系統設定開啟），列出婚禮當天需要帶到現場的所有物品。分類包含：</p><br>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+        <div class="ws-card"><div class="ws-icon">👗</div><div class="ws-name">服裝</div><div class="ws-desc">禮服、便服、鞋子、NuBra 等</div></div>
+        <div class="ws-card"><div class="ws-icon">📋</div><div class="ws-name">招待使用</div><div class="ws-desc">發餅名單、桌次圖、座位表</div></div>
+        <div class="ws-card"><div class="ws-icon">🧧</div><div class="ws-name">收禮相關</div><div class="ws-desc">禮金本、簽名本、計算機</div></div>
+        <div class="ws-card"><div class="ws-icon">✏️</div><div class="ws-name">文具</div><div class="ws-desc">簽字筆、美工刀等</div></div>
+        <div class="ws-card"><div class="ws-icon">🌸</div><div class="ws-name">佈置</div><div class="ws-desc">相本、相框、謝卡</div></div>
+        <div class="ws-card"><div class="ws-icon">💍</div><div class="ws-name">其他</div><div class="ws-desc">婚戒、捧花、胸花、尾款紅包</div></div>
+      </div>
+    </div>
+    <div class="ib tip"><i>💡</i><div>每項物品都可以勾選「已準備」，也可以標記「需歸還」（如租借的金飾、婚紗等），方便婚後追蹤歸還清單。</div></div>
+  </div>
+</div>
+
+<!-- ══ 12 座位 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">12</div><div class="sh-t">🪑 座位安排</div><div class="sh-s">桌次與賓客管理</div></div>
+  <div class="card">
+    <div class="bt">
+      <p>座位頁面幫助你管理婚宴桌次和賓客座位。系統預設有 15 桌，每桌可設定桌號、桌名（如「男方親戚」）、賓客名單。</p><br>
+      <p>每位賓客可以標記：<span class="hl">素食</span>、<span class="hl">兒童席</span>，系統會在底部自動統計素食人數、兒童人數等。</p>
+    </div>
+    <div class="ib note"><i>ℹ️</i><div>頁面底部有「匯出座位資料」功能，可以把桌次安排匯出成 Excel 檔案，方便給場地或列印桌牌。</div></div>
+  </div>
+
+  <div class="card">
+    <div class="step-row"><div class="si green">📝</div><div class="step-info"><h3>填寫賓客資料</h3></div></div>
+    <ol class="sl">
+      <li>點擊任一桌的卡片，展開該桌的詳細設定。</li>
+      <li>設定每桌的座位數（預設 10 人，可調整）。</li>
+      <li>在賓客欄位輸入姓名，勾選素食或兒童選項。</li>
+      <li>可拖曳桌次卡片調整桌次順序。</li>
+      <li>使用「＋ 新增桌次」按鈕增加桌數。</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══ 13 其他頁籤 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">13</div><div class="sh-t">其他頁籤一覽</div><div class="sh-s">系統共有 19 個頁籤</div></div>
+  <div class="card">
+    <div class="ws-grid">
+      <div class="ws-card">
+        <div class="ws-icon">🏮</div>
+        <div class="ws-name">傳統儀式</div>
+        <div class="ws-desc">文定 / 迎娶儀式流程說明與注意事項，婚顧客製化內容</div>
+        <span class="ws-tag">說明</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">🧧</div>
+        <div class="ws-name">紅包</div>
+        <div class="ws-desc">記錄收到的賀禮紅包，建立禮金帳本，方便日後回禮參考</div>
+        <span class="ws-tag">記錄</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">💼</div>
+        <div class="ws-name">尾款</div>
+        <div class="ws-desc">婚禮當天需支付給各廠商的尾款清單，含紅包袋分類</div>
+        <span class="ws-tag">財務</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">👥</div>
+        <div class="ws-name">工作人員</div>
+        <div class="ws-desc">婚禮當天工作人員名單（招待、收禮、司儀助理等），含聯絡方式</div>
+        <span class="ws-tag">人員</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">🥮</div>
+        <div class="ws-name">喜餅名單</div>
+        <div class="ws-desc">管理喜餅發送名單，記錄每位親友的寄送地址和發送狀態</div>
+        <span class="ws-tag">寄送</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">📋</div>
+        <div class="ws-name">結婚登記</div>
+        <div class="ws-desc">婚後結婚登記流程說明，所需文件和注意事項提示</div>
+        <span class="ws-tag">法律</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">💒</div>
+        <div class="ws-name">西式證婚</div>
+        <div class="ws-desc">西式婚禮儀式流程，含誓詞範例、進場順序說明</div>
+        <span class="ws-tag">流程</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">📅</div>
+        <div class="ws-name">當日流程</div>
+        <div class="ws-desc">婚禮當天時間軸，含每個環節的時間和注意事項</div>
+        <span class="ws-tag">時程</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">📂</div>
+        <div class="ws-name">文件</div>
+        <div class="ws-desc">上傳和存放相關文件（合約掃描、清單、提案文件等）</div>
+        <span class="ws-tag">存檔</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">🧰</div>
+        <div class="ws-name">工具箱</div>
+        <div class="ws-desc">系統工具集：更新紀錄查看、資料匯出、設定等</div>
+        <span class="ws-tag">設定</span>
+      </div>
+      <div class="ws-card">
+        <div class="ws-icon">👁</div>
+        <div class="ws-name">顧問視角</div>
+        <div class="ws-desc">顯示婚顧留下的會議記錄（唯讀），方便核對討論重點</div>
+        <span class="ws-tag">婚顧共用</span>
+      </div>
+    </div>
+    <div class="ib note"><i>ℹ️</i><div>以上部分頁籤在預設頁籤列中未顯示。可請婚顧或在工具箱中開啟，或透過頁籤編輯模式將需要的頁籤加入顯示順序。</div></div>
+  </div>
+</div>
+
+<!-- ══ 14 常見問題 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">14</div><div class="sh-t">常見問題排查</div><div class="sh-s">遇到問題先看這裡</div></div>
+
+  <div class="trouble">
+    <div class="trouble-q">❓ 我的授權碼輸入後顯示「無效」，但碼是婚顧給的。</div>
+    <div class="trouble-a">
+      <div class="sol"><span class="sol-n">1</span><span>確認授權碼格式為 <code>DR-DR-XXXXXX</code>（新人專用）。若是 <code>DR-CON-</code> 開頭，那是婚顧的碼，不適用於此。</span></div>
+      <div class="sol"><span class="sol-n">2</span><span>確認你進入的網址包含正確的 <code>?tenant=appXX</code> 參數，這個參數必須與授權碼對應。</span></div>
+      <div class="sol"><span class="sol-n">3</span><span>授權碼全部是大寫英文，請確認輸入時沒有打成小寫或有空格。</span></div>
+      <div class="sol"><span class="sol-n">4</span><span>若仍無效，聯絡婚顧確認授權碼是否正確。</span></div>
+    </div>
+  </div>
+
+  <div class="trouble">
+    <div class="trouble-q">❓ 我之前填的資料怎麼不見了？</div>
+    <div class="trouble-a">
+      <div class="sol"><span class="sol-n">1</span><span>確認你是從<strong>同一個網址</strong>（含正確 tenant 參數）進入系統。不同 tenant 的資料是分開的。</span></div>
+      <div class="sol"><span class="sol-n">2</span><span>嘗試重新整理頁面（下拉刷新或 F5），等待系統重新從雲端載入資料。</span></div>
+      <div class="sol"><span class="sol-n">3</span><span>若使用了不同設備或瀏覽器，請確認是用同一個帳號登入，資料存在雲端，切換設備不會遺失。</span></div>
+    </div>
+  </div>
+
+  <div class="trouble">
+    <div class="trouble-q">❓ 我輸入的資料有沒有儲存成功？</div>
+    <div class="trouble-a">
+      <div class="sol"><span class="sol-n">1</span><span>系統採用「自動儲存」機制，輸入後約 1 秒會自動存至雲端，不需手動按儲存。</span></div>
+      <div class="sol"><span class="sol-n">2</span><span>若網路不穩，可能暫時未儲存。等網路恢復後，系統會自動重試儲存。</span></div>
+      <div class="sol"><span class="sol-n">3</span><span>在工具箱頁面可以查看「即時更新紀錄」，確認最近的儲存歷史。</span></div>
+    </div>
+  </div>
+
+  <div class="trouble">
+    <div class="trouble-q">❓ 我不小心刪了一張卡片，可以找回來嗎？</div>
+    <div class="trouble-a">
+      <div class="sol"><span class="sol-n">1</span><span>立即按 <span class="hl">Ctrl+Z</span>（Mac: Command+Z）撤銷刪除操作。</span></div>
+      <div class="sol"><span class="sol-n">2</span><span>若已離開頁面或重新整理，可到工具箱頁面找「垃圾桶」或「最近刪除」，在一定時間內可以還原。</span></div>
+    </div>
+  </div>
+
+  <div class="trouble">
+    <div class="trouble-q">❓ 婚禮顧問說看不到我的資料，怎麼辦？</div>
+    <div class="trouble-a">
+      <div class="sol"><span class="sol-n">1</span><span>確認你已設定帳號密碼，並且已將帳號和密碼告知婚顧，讓婚顧把你加入後台。</span></div>
+      <div class="sol"><span class="sol-n">2</span><span>確認你的資料是在正確的 tenant 網址下填寫（婚顧提供的那個網址）。</span></div>
+      <div class="sol"><span class="sol-n">3</span><span>婚顧可以在後台點擊你的名字旁邊的 ↺ 刷新按鈕，重新拉取你的最新資料。</span></div>
+    </div>
+  </div>
+
+  <div class="trouble">
+    <div class="trouble-q">❓ 倒數計時顯示的天數不對。</div>
+    <div class="trouble-a">
+      <div class="sol"><span class="sol-n">1</span><span>確認 Header 的「婚禮日期」欄位已正確填寫，格式為 YYYY-MM-DD（如：2025-10-18）。</span></div>
+      <div class="sol"><span class="sol-n">2</span><span>日期若是過去的日期，倒數會顯示負數或 0。請更新為正確的婚禮日期。</span></div>
+    </div>
+  </div>
+
+  <div class="trouble">
+    <div class="trouble-q">❓ 頁面一直轉圈圈載入不完整。</div>
+    <div class="trouble-a">
+      <div class="sol"><span class="sol-n">1</span><span>確認手機網路連線正常（系統需聯網才能讀取雲端資料）。</span></div>
+      <div class="sol"><span class="sol-n">2</span><span>嘗試關閉頁面重新開啟，或清除瀏覽器快取後再試。</span></div>
+      <div class="sol"><span class="sol-n">3</span><span>若問題持續，截圖並聯絡婚顧或客服。</span></div>
+    </div>
+  </div>
+
+  <div class="trouble">
+    <div class="trouble-q">❓ 我換手機了，資料還在嗎？</div>
+    <div class="trouble-a">
+      <div class="sol"><span class="sol-n">1</span><span>資料存在雲端，換手機不影響。只要在新手機的瀏覽器開啟同一個網址，用帳號密碼登入即可。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 15 快速參考卡 ══ -->
+<div class="section">
+  <div class="sh"><div class="sh-n">15</div><div class="sh-t">快速參考卡</div><div class="sh-s">貼在手邊備用</div></div>
+  <div class="card" style="padding:0;overflow:hidden;">
+    <table class="ref-table">
+      <thead><tr><th>情境</th><th>到哪裡做</th><th>注意</th></tr></thead>
+      <tbody>
+        <tr><td>🔑 首次登入</td><td>點「首次使用？授權碼啟用」</td><td>需輸入婚顧給的 DR-DR-XXXXXX</td></tr>
+        <tr><td>👤 帳號密碼登入</td><td>直接在登入頁輸入帳號密碼</td><td>帳密需先在首次啟用時設定</td></tr>
+        <tr><td>📅 填婚禮日期</td><td>Header → 婚禮日期欄位</td><td>直接點擊輸入，自動存</td></tr>
+        <tr><td>🔄 更新任務狀態</td><td>看板 → 點卡片狀態圓點</td><td>每次完成一件事就更新</td></tr>
+        <tr><td>💰 填廠商費用</td><td>預算 → 點金額直接輸入</td><td>輸入後按 Enter 確認</td></tr>
+        <tr><td>📆 新增行程</td><td>行事曆 → 點日期 → ＋ 新增</td><td>可連結 Google 行事曆</td></tr>
+        <tr><td>↩ 撤銷操作</td><td>鍵盤 Ctrl+Z（Mac: ⌘Z）</td><td>支援看板和預算的撤銷</td></tr>
+        <tr><td>🔀 調整頁籤順序</td><td>頁籤列右方 ✎ 按鈕 → 拖曳</td><td>改名：雙擊頁籤名稱</td></tr>
+        <tr><td>📄 匯出預算 PDF</td><td>預算頁 → 右上角匯出按鈕</td><td>方便與家長/婚顧討論</td></tr>
+        <tr><td>🧳 確認物品清單</td><td>當日物品頁</td><td>婚禮前一天逐項核對</td></tr>
+        <tr><td>🗒️ 看婚顧留言</td><td>顧問視角頁</td><td>唯讀，只有婚顧可寫入</td></tr>
+        <tr><td>🔓 忘記密碼</td><td>登入頁 → 「忘記密碼」</td><td>需輸入授權碼重設</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="footer">U-Wedding 新人操作手冊 · Couple Edition · 2025</div>
+
+</body>
+</html>
