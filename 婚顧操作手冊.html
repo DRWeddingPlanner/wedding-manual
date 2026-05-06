@@ -506,6 +506,22 @@
   /* ── highlight ── */
   .hl { background: #fdf0d8; border-radius: 4px; padding: 1px 5px; color: var(--gold-dark); font-weight: 600; }
 
+
+  /* ── TOC anchor links ── */
+  html { scroll-behavior: smooth; }
+  .toc-item a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .toc-item:hover { color: var(--gold-light); }
+  .toc-item a:hover { color: var(--gold-light); }
+  /* offset fixed-ish headers */
+  .section { scroll-margin-top: 24px; }
+
   @media (max-width: 600px) {
     .feature-grid { grid-template-columns: repeat(2, 1fr); }
     .cover-title { font-size: 28px; }
@@ -527,16 +543,16 @@
 <div class="toc">
   <div class="toc-title">目錄 / Contents</div>
   <div class="toc-grid">
-    <div class="toc-item"><span class="toc-num">01</span>角色與登入方式</div>
-    <div class="toc-item"><span class="toc-num">02</span>婚顧後台總覽</div>
-    <div class="toc-item"><span class="toc-num">03</span>新增客戶操作</div>
-    <div class="toc-item"><span class="toc-num">04</span>查看客戶資料</div>
-    <div class="toc-item"><span class="toc-num">05</span>撰寫會議記錄</div>
-    <div class="toc-item"><span class="toc-num">06</span>常見問題排查</div>
-    <div class="toc-item"><span class="toc-num">07</span>行事曆設定操作</div>
-    <div class="toc-item"><span class="toc-num">08</span>婚顧視角操作</div>
-    <div class="toc-item"><span class="toc-num">09</span>資訊來源說明</div>
-    <div class="toc-item"><span class="toc-num">10</span>快速參考卡</div>
+    <div class="toc-item"><a href="#s1"><span class="toc-num">01</span>角色與登入方式</a></div>
+    <div class="toc-item"><a href="#s2"><span class="toc-num">02</span>婚顧後台總覽</a></div>
+    <div class="toc-item"><a href="#s3"><span class="toc-num">03</span>新增客戶操作</a></div>
+    <div class="toc-item"><a href="#s4"><span class="toc-num">04</span>查看客戶資料</a></div>
+    <div class="toc-item"><a href="#s5"><span class="toc-num">05</span>撰寫會議記錄</a></div>
+    <div class="toc-item"><a href="#s6"><span class="toc-num">06</span>常見問題排查</a></div>
+    <div class="toc-item"><a href="#s7"><span class="toc-num">07</span>行事曆設定操作</a></div>
+    <div class="toc-item"><a href="#s8"><span class="toc-num">08</span>婚顧視角操作</a></div>
+    <div class="toc-item"><a href="#s9"><span class="toc-num">09</span>資訊來源說明</a></div>
+    <div class="toc-item"><a href="#s10"><span class="toc-num">10</span>快速參考卡</a></div>
   </div>
 </div>
 

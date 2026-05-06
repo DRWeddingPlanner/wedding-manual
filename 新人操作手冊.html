@@ -21,6 +21,21 @@
   --red: #c04040;
   --blue: #3a5a8a;
 }
+
+/* ── TOC anchor links ── */
+html { scroll-behavior: smooth; }
+.toc-item a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.toc-item:hover { color: rgba(232,212,168,0.9); }
+.toc-item a:hover { color: rgba(232,212,168,0.9); }
+.section { scroll-margin-top: 24px; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--brown); line-height: 1.8; }
 
@@ -195,28 +210,28 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 <div class="toc">
   <div class="toc-label">目錄 / Contents</div>
   <div class="toc-grid">
-    <div class="toc-item"><span class="toc-n">01</span>登入流程</div>
-    <div class="toc-item"><span class="toc-n">02</span>帳號設定</div>
-    <div class="toc-item"><span class="toc-n">03</span>Header 婚禮資訊設定</div>
-    <div class="toc-item"><span class="toc-n">04</span>頁籤排序與改名</div>
-    <div class="toc-item"><span class="toc-n">05</span>⏱ 倒數頁</div>
-    <div class="toc-item"><span class="toc-n">06</span>📋 看板</div>
-    <div class="toc-item"><span class="toc-n">07</span>💰 預算</div>
-    <div class="toc-item"><span class="toc-n">08</span>📆 行事曆</div>
-    <div class="toc-item"><span class="toc-n">09</span>⭐ 廠商</div>
-    <div class="toc-item"><span class="toc-n">10</span>📁 合約</div>
-    <div class="toc-item"><span class="toc-n">11</span>🎒 當日物品</div>
-    <div class="toc-item"><span class="toc-n">12</span>🪑 座位安排</div>
-    <div class="toc-item"><span class="toc-n">13</span>其他頁籤一覽</div>
-    <div class="toc-item"><span class="toc-n">14</span>常見問題排查</div>
-    <div class="toc-item"><span class="toc-n">15</span>快速參考卡</div>
+    <div class="toc-item"><a href="#s1"><span class="toc-n">01</span>登入流程</a></div>
+    <div class="toc-item"><a href="#s2"><span class="toc-n">02</span>帳號設定</a></div>
+    <div class="toc-item"><a href="#s3"><span class="toc-n">03</span>Header 婚禮資訊設定</a></div>
+    <div class="toc-item"><a href="#s4"><span class="toc-n">04</span>頁籤排序與改名</a></div>
+    <div class="toc-item"><a href="#s5"><span class="toc-n">05</span>⏱ 倒數頁</a></div>
+    <div class="toc-item"><a href="#s6"><span class="toc-n">06</span>📋 看板</a></div>
+    <div class="toc-item"><a href="#s7"><span class="toc-n">07</span>💰 預算</a></div>
+    <div class="toc-item"><a href="#s8"><span class="toc-n">08</span>📆 行事曆</a></div>
+    <div class="toc-item"><a href="#s9"><span class="toc-n">09</span>⭐ 廠商</a></div>
+    <div class="toc-item"><a href="#s10"><span class="toc-n">10</span>📁 合約</a></div>
+    <div class="toc-item"><a href="#s11"><span class="toc-n">11</span>🎒 當日物品</a></div>
+    <div class="toc-item"><a href="#s12"><span class="toc-n">12</span>🪑 座位安排</a></div>
+    <div class="toc-item"><a href="#s13"><span class="toc-n">13</span>其他頁籤一覽</a></div>
+    <div class="toc-item"><a href="#s14"><span class="toc-n">14</span>常見問題排查</a></div>
+    <div class="toc-item"><a href="#s15"><span class="toc-n">15</span>快速參考卡</a></div>
   </div>
 </div>
 
 <div class="wrap">
 
 <!-- ══ 01 登入 ══ -->
-<div class="section">
+<div class="section" id="s1">
   <div class="sh"><div class="sh-n">1</div><div class="sh-t">登入流程</div><div class="sh-s">第一步</div></div>
 
   <div class="card">
@@ -282,7 +297,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 02 帳號設定 ══ -->
-<div class="section">
+<div class="section" id="s2">
   <div class="sh"><div class="sh-n">2</div><div class="sh-t">帳號與密碼設定</div><div class="sh-s">重要，婚顧需要你的帳密</div></div>
   <div class="card">
     <div class="bt">
@@ -300,7 +315,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 03 Header ══ -->
-<div class="section">
+<div class="section" id="s3">
   <div class="sh"><div class="sh-n">3</div><div class="sh-t">Header 婚禮資訊設定</div><div class="sh-s">登入後第一件事</div></div>
 
   <div class="card">
@@ -347,7 +362,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 04 頁籤 ══ -->
-<div class="section">
+<div class="section" id="s4">
   <div class="sh"><div class="sh-n">4</div><div class="sh-t">頁籤排序與自訂改名</div><div class="sh-s">把最常用的移到前面</div></div>
   <div class="card">
     <div class="bt">
@@ -376,7 +391,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 05 倒數 ══ -->
-<div class="section">
+<div class="section" id="s5">
   <div class="sh"><div class="sh-n">5</div><div class="sh-t">⏱ 倒數頁</div><div class="sh-s">婚禮進度一覽</div></div>
   <div class="card">
     <div class="bt">
@@ -400,7 +415,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 06 看板 ══ -->
-<div class="section">
+<div class="section" id="s6">
   <div class="sh"><div class="sh-n">6</div><div class="sh-t">📋 看板</div><div class="sh-s">婚禮籌備核心工具</div></div>
 
   <div class="card">
@@ -465,7 +480,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 07 預算 ══ -->
-<div class="section">
+<div class="section" id="s7">
   <div class="sh"><div class="sh-n">7</div><div class="sh-t">💰 預算</div><div class="sh-s">費用追蹤</div></div>
 
   <div class="card">
@@ -499,7 +514,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 08 行事曆 ══ -->
-<div class="section">
+<div class="section" id="s8">
   <div class="sh"><div class="sh-n">8</div><div class="sh-t">📆 行事曆</div><div class="sh-s">新人 & 婚顧共用 · v2.0</div></div>
 
   <!-- 功能概覽 -->
@@ -636,7 +651,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 09 廠商 ══ -->
-<div class="section">
+<div class="section" id="s9">
   <div class="sh"><div class="sh-n">9</div><div class="sh-t">⭐ 廠商</div><div class="sh-s">廠商資訊管理</div></div>
   <div class="card">
     <div class="bt">
@@ -648,7 +663,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 10 合約 ══ -->
-<div class="section">
+<div class="section" id="s10">
   <div class="sh"><div class="sh-n">10</div><div class="sh-t">📁 合約</div><div class="sh-s">合約管理追蹤</div></div>
   <div class="card">
     <div class="bt">
@@ -660,7 +675,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 11 當日物品 ══ -->
-<div class="section">
+<div class="section" id="s11">
   <div class="sh"><div class="sh-n">11</div><div class="sh-t">🎒 當日物品</div><div class="sh-s">婚禮當天物品清單</div></div>
   <div class="card">
     <div class="bt">
@@ -679,7 +694,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 12 座位 ══ -->
-<div class="section">
+<div class="section" id="s12">
   <div class="sh"><div class="sh-n">12</div><div class="sh-t">🪑 座位安排</div><div class="sh-s">桌次與賓客管理</div></div>
   <div class="card">
     <div class="bt">
@@ -702,7 +717,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 13 其他頁籤 ══ -->
-<div class="section">
+<div class="section" id="s13">
   <div class="sh"><div class="sh-n">13</div><div class="sh-t">其他頁籤一覽</div><div class="sh-s">系統共有 19 個頁籤</div></div>
   <div class="card">
     <div class="ws-grid">
@@ -778,7 +793,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 14 常見問題 ══ -->
-<div class="section">
+<div class="section" id="s14">
   <div class="sh"><div class="sh-n">14</div><div class="sh-t">常見問題排查</div><div class="sh-s">遇到問題先看這裡</div></div>
 
   <div class="trouble">
@@ -852,7 +867,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--bg); color: var(--
 </div>
 
 <!-- ══ 15 快速參考卡 ══ -->
-<div class="section">
+<div class="section" id="s15">
   <div class="sh"><div class="sh-n">15</div><div class="sh-t">快速參考卡</div><div class="sh-s">貼在手邊備用</div></div>
   <div class="card" style="padding:0;overflow:hidden;">
     <table class="ref-table">
